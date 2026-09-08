@@ -1,7 +1,7 @@
 {
-  "name": "economie-gouv",
+  "name": "parlement-gouv",
   "version": "1.0.0",
-  "description": "Official information portal of the Government of Astoria.",
+  "description": "Official Parliament of the Republic of Astoria — legislation, parliamentary proceedings, and citizen participation.",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -68,7 +68,7 @@
   "packageManager": "pnpm@8.15.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codegouvaor/economie.git"
+    "url": "https://github.com/codegouvaor/parlement.git"
   },
   "keywords": [
     "news",
@@ -80,14 +80,14 @@
   ],
   "author": {
     "name": "Astoria Government Development Team",
-    "email": "developer@economie.gouv.aor",
-    "url": "https://economie.gouv.aor"
+    "email": "developer@parlement.gouv.aor",
+    "url": "https://parlement.gouv.aor"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codegouvaor/economie/issues"
+    "url": "https://github.com/codegouvaor/parlement/issues"
   },
-  "homepage": "https://github.com/codegouvaor/economie#readme",
+  "homepage": "https://github.com/codegouvaor/parlement#readme",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix --quiet",
