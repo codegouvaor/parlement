@@ -13,10 +13,10 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/codegouvaor/economie/server/src/config"
-	"github.com/codegouvaor/economie/server/src/interfaces"
-	"github.com/codegouvaor/economie/server/src/models"
-	"github.com/codegouvaor/economie/server/src/utils"
+	"github.com/codegouvaor/parlement/server/src/config"
+	"github.com/codegouvaor/parlement/server/src/interfaces"
+	"github.com/codegouvaor/parlement/server/src/models"
+	"github.com/codegouvaor/parlement/server/src/utils"
 	"gorm.io/gorm"
 )
 

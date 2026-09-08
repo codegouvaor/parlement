@@ -9,12 +9,12 @@
 export const PORTAL_HOME = "/";
 
 export type PrimaryNavKey =
-  | "economie"
-  | "fiscalite"
-  | "entreprises"
-  | "financesPubliques"
-  | "commerceDouanes"
-  | "donneesRessources";
+  | "leParlement"
+  | "legislation"
+  | "travauxParlementaires"
+  | "participation"
+  | "parlementaires"
+  | "recherche";
 
 /** A link inside a mega-menu panel; its label is a `nav.panel` message key. */
 export type PrimaryNavLink = {
@@ -45,11 +45,12 @@ export type MegaMenuCategory =
 /**
  * One top-level entry of the Government Header navigation.
  *
- * Navigation principle (info.gouv.fr-inspired, adapted to Astoria): every
- * section opens a mega-menu panel composed of
+ * Navigation principle (info.gouv.fr-inspired, adapted to Astoria): the
+ * Parliament header is question- and task-oriented rather than organised
+ * around generic website categories. Every section answers a citizen question
+ * and opens a mega-menu panel composed of
  *  - a leader band: the section name, a one-line description and the main
- *    section action (e.g. “→ Tout le Gouvernement”),
- *  - an optional featured zone (used by Actualités for “À la une”),
+ *    section action,
  *  - a small number of link columns — the mega-menu is not the sitemap of the
  *    portal: only the destinations that matter to the user journey.
  *
@@ -72,16 +73,6 @@ export type PrimaryNavItem =
         paragraphKey: string;
         link: PrimaryNavLink;
       };
-      /**
-       * Optional featured zone rendered as the first column of the panel
-       * (e.g. “À la une” in Actualités), meant to be fed dynamically later.
-       * The link label is NOT stored here: the header reads the shared
-       * `home.news.featured` messages so the headline has a single source.
-       */
-      featuredLink?: {
-        titleKey: string;
-        href: string;
-      };
       categories?: ReadonlyArray<MegaMenuCategory>;
     };
 
@@ -92,18 +83,11 @@ export type FooterColumn = {
 };
 
 export const sectionPaths = {
-  composition: "/government/composition",
-  decryptages: "/decryptages",
-  lEtatEtMoi: "/l-etat-et-moi",
-  preventionDesRisques: "/prevention-des-risques",
-  suiviDesEngagements: "/suivi-des-engagements",
-  liensUtiles: "/liens-utiles",
-  /** Citizen participation: provisional section being published. */
+  parlement: "/parlement",
+  legislation: "/legislation",
+  travaux: "/travaux",
   participation: "/participation",
-  /** Priority policies (former “Politiques prioritaires” navigation entry). */
-  politiquesPrioritaires: "/politiques-prioritaires",
-  /** Public policies hub — main destination of “L'action publique”. */
-  politiquesPubliques: "/politiques-publiques",
+  parlementaires: "/parlementaires",
 } as const;
 
 export const legalPaths = {
@@ -116,9 +100,6 @@ export const legalPaths = {
 
 export const searchPath = "/search";
 
-/** Press area of the portal (dedicated page being published). */
-export const pressPath = "/presse";
-
 /** DOM ids used as skip-link targets. */
 export const pageAnchors = {
   content: "main-content",
@@ -127,392 +108,301 @@ export const pageAnchors = {
 
 /**
  * Secondary navigation zone of the site footer, distinct from the main
- * navigation of the header. Organised like a ministry footer:
+ * navigation of the header. Organised like an institutional footer:
  *
- *   Rubriques        → Accueil, Actualités, le Gouvernement, le ministère
- *   Vous êtes        → the portal audiences (individuals, companies)
- *   Presse & portail → ministry news, press releases, portal information
- *   Autres ressources→ consultations, suppliers, documentation, data portal,
- *                      the “Services Publics +” application
+ *   Le Parlement    → presentation, organisation, the three chambers, presidency
+ *   Législation     → projets, propositions, textes adoptés, archives
+ *   Travaux         → agenda, séances, commissions, archives
+ *   Participation   → consultations, candidatures, MyGouv
+ *   Presse & droits → presse, légal, plan du portail
  *
- * The column zone is complemented by the bottom bar of the footer
- * (Contact, Plan du portail, Documents opposables, legal links). Labels
- * resolve under `nav.panel`, column titles under `footer.columns`.
+ * Column titles resolve under `footer.columns`, links under `nav.panel`.
  */
 export const footerNavigation: ReadonlyArray<FooterColumn> = [
   {
-    columnKey: "rubriques",
+    columnKey: "leParlement",
     links: [
-      { labelKey: "accueil", href: PORTAL_HOME },
-      { labelKey: "actualites", href: "/news" },
-      { labelKey: "ministres", href: "/government/ministres" },
-      { labelKey: "ministere", href: "/le-ministere" },
-      { labelKey: "rejoignezNous", href: "/rejoignez-nous" },
+      { labelKey: "parlementPresentation", href: "/parlement/presentation" },
+      { labelKey: "parlementOrganisation", href: "/parlement/organisation" },
+      { labelKey: "parlementTroisChambres", href: "/parlement/chambres" },
+      { labelKey: "parlementPresidence", href: "/parlement/presidence" },
     ],
   },
   {
-    columnKey: "vousEtes",
+    columnKey: "legislation",
     links: [
-      // The audience entries reuse the domain hubs of the main navigation:
-      // the portal is one application, oriented by audience in the footer.
-      { labelKey: "audienceParticulier", href: "/fiscalite" },
-      { labelKey: "audienceEntreprise", href: "/entreprises" },
+      { labelKey: "legislationProjetsLoi", href: "/legislation/projets-de-loi" },
+      { labelKey: "legislationPropositionsLoi", href: "/legislation/propositions-de-loi" },
+      { labelKey: "legislationTextesAdoptes", href: "/legislation/textes-adoptes" },
+      { labelKey: "legislationArchives", href: "/legislation/archives" },
     ],
   },
   {
-    columnKey: "pressePortail",
+    columnKey: "travaux",
     links: [
-      { labelKey: "actualiteMinistere", href: "/news/actualite-du-ministere" },
-      { labelKey: "communiquesPresse", href: pressPath },
-      { labelKey: "informationPortail", href: "/information-sur-le-portail" },
+      { labelKey: "travauxAgendaJour", href: "/travaux/agenda-du-jour" },
+      { labelKey: "travauxSeances", href: "/travaux/seances" },
+      { labelKey: "travauxCommissions", href: "/travaux/commissions" },
+      { labelKey: "travauxArchives", href: "/travaux/archives" },
     ],
   },
   {
-    columnKey: "autresRessources",
+    columnKey: "participation",
     links: [
-      { labelKey: "consultationsPubliques", href: "/consultations-publiques" },
-      { labelKey: "fournisseurs", href: "/fournisseurs-du-ministere" },
-      { labelKey: "documentation", href: "/documentation" },
-      // Partner portals of the ministry, opened outside the portal.
-      { labelKey: "dataEconomie", href: "https://data.economie.gouv.aor" },
-      { labelKey: "servicesPublicsPlus", href: "https://service-public.gouv.aor/plus" },
+      { labelKey: "participationConsultations", href: "/participation/consultations" },
+      { labelKey: "participationCandidatures", href: "/participation/candidatures" },
+      { labelKey: "participationMyGouv", href: "https://sso.gouv.aor" },
     ],
   },
 ];
 
 /**
- * Main navigation of the Government Header of the Ministry of Economy and
- * Finance — the permanent architecture of the application, in six domains.
- * Each domain regroups the ministry's missions and services into one
- * coherent application (no separate portals for taxes, customs, budget…):
+ * Main navigation of the Government Header of the Parliament of the Republic
+ * of Astoria — the permanent information architecture of the application, in
+ * six subjects. The header is question-oriented: every entry answers a
+ * citizen question about the institution.
  *
- *   Économie             → Politique économique, croissance, emploi, innovation
- *   Fiscalité            → Impôts, taxes, déclarations et paiements
- *   Entreprises          → Créer, gérer, financer, exporter
- *   Finances publiques   → Budget de l'État, dette, transparence
- *   Commerce & Douanes   → Commerce intérieur et international, douanes
- *   Données & Ressources → Données, statistiques, études, réglementation
+ *   Le Parlement          → Comprendre : qu'est-ce que le Parlement ?
+ *   Législation           → Suivre : qu'est-ce qui devient du droit ?
+ *   Travaux parlementaires→ Suivre : que fait le Parlement actuellement ?
+ *   Participation         → Agir : comment puis-je participer ?
+ *   Parlementaires        → Accéder : qui exerce le mandat parlementaire ?
+ *   Recherche             → Accéder : que puis-je retrouver ?
  *
- * Every domain opens a mega-menu panel with four thematic sections of four
- * links each, so the ministry can be navigated as a single application
- * rather than as a collection of linked administrative sites. The structure
- * is configuration-driven: the same architecture can be reused for another
- * ministry by providing a different `primaryNavigation`.
+ * The first four are the thematic pillars of the institution (comprendre,
+ * suivre, agir); the last two are transversal access points. Each pillar
+ * opens a mega-menu panel with a leader band and a few link columns. The
+ * structure is configuration-driven: the same architecture can be reused by
+ * another institution by providing a different `primaryNavigation`.
  *
- * Hrefs follow the URL plan of the ministry portal; a few point to pages
+ * Hrefs follow the URL plan of the Parliament portal; a few point to pages
  * being published and will resolve as soon as those sections ship.
  */
 export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
   {
     type: "megaMenu",
-    labelKey: "economie",
-    href: "/economie",
+    labelKey: "leParlement",
+    href: "/parlement",
     leader: {
-      titleKey: "economieTitle",
-      paragraphKey: "economieText",
-      link: { labelKey: "economieAllLink", href: "/economie" },
+      titleKey: "parlementTitle",
+      paragraphKey: "parlementText",
+      link: { labelKey: "parlementAllLink", href: "/parlement" },
     },
     categories: [
       {
-        // POLITIQUE ÉCONOMIQUE
-        titleKey: "economiePolitiqueCategory",
+        // L'INSTITUTION
+        titleKey: "parlementInstitutionCategory",
         links: [
-          { labelKey: "economieStrategie", href: "/economie/strategie-economique" },
-          { labelKey: "economieReformes", href: "/economie/reformes-economiques" },
-          { labelKey: "economieIndustrie", href: "/economie/politique-industrielle" },
-          { labelKey: "economiePolitiqueCompetitivite", href: "/economie/politique-de-competitivite" },
+          { labelKey: "parlementPresentation", href: "/parlement/presentation" },
+          { labelKey: "parlementRoleConstitutionnel", href: "/parlement/role-constitutionnel" },
+          { labelKey: "parlementCadreConstitutionnel", href: "/parlement/cadre-constitutionnel" },
         ],
       },
       {
-        // CROISSANCE & COMPÉTITIVITÉ
-        titleKey: "economieCroissanceCategory",
+        // ORGANISATION & FONCTIONNEMENT
+        titleKey: "parlementOrganisationCategory",
         links: [
-          { labelKey: "economieCroissance", href: "/economie/croissance" },
-          { labelKey: "economieProductivite", href: "/economie/productivite" },
-          { labelKey: "economieCompetitivite", href: "/economie/competitivite" },
-          { labelKey: "economieDeveloppement", href: "/economie/developpement-economique" },
+          { labelKey: "parlementOrganisation", href: "/parlement/organisation" },
+          { labelKey: "parlementFonctionnement", href: "/parlement/fonctionnement" },
+          { labelKey: "parlementStructureInstitutionnelle", href: "/parlement/structure-institutionnelle" },
         ],
       },
       {
-        // EMPLOI & ACTIVITÉ
-        titleKey: "economieEmploiCategory",
+        // LES TROIS CHAMBRES
+        titleKey: "parlementChambresCategory",
         links: [
-          { labelKey: "economieMarcheTravail", href: "/economie/marche-du-travail" },
-          { labelKey: "economieActivite", href: "/economie/activite-economique" },
-          { labelKey: "economieEntrepreneuriat", href: "/economie/entrepreneuriat" },
-          { labelKey: "economieDynamiqueEntreprises", href: "/economie/dynamique-des-entreprises" },
+          { labelKey: "parlementChambreCitoyenne", href: "/parlement/chambres/chambre-citoyenne" },
+          { labelKey: "parlementChambreDeputes", href: "/parlement/chambres/chambre-des-deputes" },
+          { labelKey: "parlementSenat", href: "/parlement/chambres/senat" },
         ],
       },
       {
-        // INVESTISSEMENT & INNOVATION
-        titleKey: "economieInvestissementCategory",
+        // PRÉSIDENCE & ADMINISTRATION
+        titleKey: "parlementPresidenceCategory",
         links: [
-          { labelKey: "economieInvestissement", href: "/economie/investissement" },
-          { labelKey: "economieInnovation", href: "/economie/innovation" },
-          { labelKey: "economieRecherche", href: "/economie/recherche" },
-          { labelKey: "economieTechnologiesStrategiques", href: "/economie/technologies-strategiques" },
+          { labelKey: "parlementPresidence", href: "/parlement/presidence" },
+          { labelKey: "parlementAdministration", href: "/parlement/administration-parlementaire" },
         ],
       },
     ],
   },
   {
     type: "megaMenu",
-    labelKey: "fiscalite",
-    href: "/fiscalite",
+    labelKey: "legislation",
+    href: "/legislation",
     leader: {
-      titleKey: "fiscaliteTitle",
-      paragraphKey: "fiscaliteText",
-      link: { labelKey: "fiscaliteAllLink", href: "/fiscalite" },
+      titleKey: "legislationTitle",
+      paragraphKey: "legislationText",
+      link: { labelKey: "legislationAllLink", href: "/legislation" },
     },
     categories: [
       {
-        // PARTICULIERS
-        titleKey: "fiscaliteParticuliersCategory",
+        // L'INITIATIVE
+        titleKey: "legislationInitiativeCategory",
         links: [
-          { labelKey: "fiscaliteImpotRevenu", href: "/fiscalite/impot-sur-le-revenu" },
-          { labelKey: "fiscaliteDeclarationFiscale", href: "/fiscalite/declaration-fiscale" },
-          { labelKey: "fiscalitePaiement", href: "/fiscalite/paiement" },
-          { labelKey: "fiscaliteSituationFiscale", href: "/fiscalite/situation-fiscale" },
+          { labelKey: "legislationProjetsLoi", href: "/legislation/projets-de-loi" },
+          { labelKey: "legislationPropositionsLoi", href: "/legislation/propositions-de-loi" },
+          { labelKey: "legislationAmendements", href: "/legislation/amendements" },
         ],
       },
       {
-        // ENTREPRISES
-        titleKey: "fiscaliteEntreprisesCategory",
+        // L'EXAMEN
+        titleKey: "legislationExamenCategory",
         links: [
-          { labelKey: "fiscaliteImpotSocietes", href: "/fiscalite/impot-sur-les-societes" },
-          { labelKey: "fiscaliteTva", href: "/fiscalite/tva" },
-          { labelKey: "fiscaliteEntreprises", href: "/fiscalite/fiscalite-des-entreprises" },
-          { labelKey: "fiscaliteObligationsFiscales", href: "/fiscalite/obligations-fiscales" },
+          { labelKey: "legislationTextesEnCours", href: "/legislation/textes-en-cours" },
+          { labelKey: "legislationDebats", href: "/legislation/debats" },
+          { labelKey: "legislationVotes", href: "/legislation/votes" },
         ],
       },
       {
-        // TAXES & CONTRIBUTIONS
-        titleKey: "fiscaliteTaxesCategory",
+        // LE CYCLE DE VIE D'UN TEXTE
+        titleKey: "legislationCycleCategory",
         links: [
-          { labelKey: "fiscaliteTaxes", href: "/fiscalite/taxes" },
-          { labelKey: "fiscaliteContributions", href: "/fiscalite/contributions" },
-          { labelKey: "fiscaliteDroitsPrelevements", href: "/fiscalite/droits-et-prelevements" },
-          { labelKey: "fiscaliteRegimesParticuliers", href: "/fiscalite/regimes-particuliers" },
+          { labelKey: "legislationTextesAdoptes", href: "/legislation/textes-adoptes" },
+          { labelKey: "legislationVersionsSuccessives", href: "/legislation/versions-successives" },
+          { labelKey: "legislationHistoriqueLegislatif", href: "/legislation/historique-legislatif" },
+          { labelKey: "legislationPromulgation", href: "/legislation/promulgation" },
         ],
       },
       {
-        // DÉCLARATIONS & PAIEMENTS — oriented towards action
-        titleKey: "fiscaliteDeclarationsCategory",
+        // LES ARCHIVES
+        titleKey: "legislationArchivesCategory",
         links: [
-          { labelKey: "fiscaliteDeclarer", href: "/fiscalite/declarer" },
-          { labelKey: "fiscalitePayer", href: "/fiscalite/payer" },
-          { labelKey: "fiscaliteEcheances", href: "/fiscalite/echeances" },
-          { labelKey: "fiscaliteSimulateurs", href: "/fiscalite/simulateurs-fiscaux" },
+          { labelKey: "legislationArchives", href: "/legislation/archives" },
         ],
       },
     ],
   },
   {
     type: "megaMenu",
-    labelKey: "entreprises",
-    href: "/entreprises",
+    labelKey: "travauxParlementaires",
+    href: "/travaux",
     leader: {
-      titleKey: "entreprisesTitle",
-      paragraphKey: "entreprisesText",
-      link: { labelKey: "entreprisesAllLink", href: "/entreprises" },
+      titleKey: "travauxTitle",
+      paragraphKey: "travauxText",
+      link: { labelKey: "travauxAllLink", href: "/travaux" },
     },
     categories: [
       {
-        // CRÉER & ENREGISTRER
-        titleKey: "entreprisesCreerCategory",
+        // EN CE MOMENT
+        titleKey: "travauxEnCeMomentCategory",
         links: [
-          { labelKey: "entreprisesCreer", href: "/entreprises/creer-une-entreprise" },
-          { labelKey: "entreprisesChoisirStructure", href: "/entreprises/choisir-une-structure" },
-          { labelKey: "entreprisesEnregistrerActivite", href: "/entreprises/enregistrer-une-activite" },
-          { labelKey: "entreprisesModifier", href: "/entreprises/modifier-une-entreprise" },
+          { labelKey: "travauxAgendaJour", href: "/travaux/agenda-du-jour" },
+          { labelKey: "travauxAgendaAVenir", href: "/travaux/agenda-a-venir" },
+          { labelKey: "travauxSessions", href: "/travaux/sessions" },
         ],
       },
       {
-        // GÉRER & DÉVELOPPER
-        titleKey: "entreprisesGererCategory",
+        // SÉANCES & DÉBATS
+        titleKey: "travauxSeancesCategory",
         links: [
-          { labelKey: "entreprisesObligationsAdministratives", href: "/entreprises/obligations-administratives" },
-          { labelKey: "entreprisesDeveloppement", href: "/entreprises/developpement" },
-          { labelKey: "entreprisesGestion", href: "/entreprises/gestion" },
-          { labelKey: "entreprisesReglementation", href: "/entreprises/reglementation" },
+          { labelKey: "travauxSeances", href: "/travaux/seances" },
+          { labelKey: "travauxDebats", href: "/travaux/debats" },
+          { labelKey: "travauxVotes", href: "/travaux/votes" },
         ],
       },
       {
-        // FINANCER & INVESTIR
-        titleKey: "entreprisesFinancerCategory",
+        // COMMISSIONS & AUDITIONS
+        titleKey: "travauxCommissionsCategory",
         links: [
-          { labelKey: "entreprisesFinancement", href: "/entreprises/financement" },
-          { labelKey: "entreprisesAidesPubliques", href: "/entreprises/aides-publiques" },
-          { labelKey: "entreprisesSubventions", href: "/entreprises/subventions" },
-          { labelKey: "entreprisesInvestissement", href: "/entreprises/investissement" },
+          { labelKey: "travauxCommissions", href: "/travaux/commissions" },
+          { labelKey: "travauxAuditions", href: "/travaux/auditions" },
+          { labelKey: "travauxQuestionsParlementaires", href: "/travaux/questions-parlementaires" },
+          { labelKey: "travauxRapports", href: "/travaux/rapports" },
         ],
       },
       {
-        // EXPORTER & INTERNATIONAL
-        titleKey: "entreprisesExporterCategory",
+        // LES ARCHIVES DES TRAVAUX
+        titleKey: "travauxArchivesCategory",
         links: [
-          { labelKey: "entreprisesExportation", href: "/entreprises/exportation" },
-          { labelKey: "entreprisesMarchesInternationaux", href: "/entreprises/marches-internationaux" },
-          { labelKey: "entreprisesAccompagnement", href: "/entreprises/accompagnement" },
-          { labelKey: "entreprisesCommerceInternational", href: "/entreprises/commerce-international" },
+          { labelKey: "travauxArchives", href: "/travaux/archives" },
         ],
       },
     ],
   },
   {
     type: "megaMenu",
-    labelKey: "financesPubliques",
-    href: "/finances-publiques",
+    labelKey: "participation",
+    href: "/participation",
     leader: {
-      titleKey: "financesTitle",
-      paragraphKey: "financesText",
-      link: { labelKey: "financesAllLink", href: "/finances-publiques" },
+      titleKey: "participationTitle",
+      paragraphKey: "participationText",
+      link: { labelKey: "participationAllLink", href: "/participation" },
     },
     categories: [
       {
-        // BUDGET DE L'ÉTAT
-        titleKey: "financesBudgetCategory",
+        // PRENDRE PART
+        titleKey: "participationPrendrePartCategory",
         links: [
-          { labelKey: "financesBudgetAnnuel", href: "/finances-publiques/budget-annuel" },
-          { labelKey: "financesProjetBudget", href: "/finances-publiques/projet-de-budget" },
-          { labelKey: "financesLoiFinances", href: "/finances-publiques/loi-de-finances" },
-          { labelKey: "financesExecutionBudgetaire", href: "/finances-publiques/execution-budgetaire" },
+          { labelKey: "participationConsultations", href: "/participation/consultations" },
+          { labelKey: "participationPetitions", href: "/participation/petitions" },
+          { labelKey: "participationInitiativesCitoyennes", href: "/participation/initiatives-citoyennes" },
         ],
       },
       {
-        // RECETTES & DÉPENSES
-        titleKey: "financesRecettesCategory",
+        // VOTES & RÉFÉRENDUMS
+        titleKey: "participationVotesCategory",
         links: [
-          { labelKey: "financesRecettesPubliques", href: "/finances-publiques/recettes-publiques" },
-          { labelKey: "financesDepensesPubliques", href: "/finances-publiques/depenses-publiques" },
-          { labelKey: "financesRepartitionDepenses", href: "/finances-publiques/repartition-des-depenses" },
-          { labelKey: "financesDepensesMinistere", href: "/finances-publiques/depenses-par-ministere" },
+          { labelKey: "participationVotesCitoyens", href: "/participation/votes" },
+          { labelKey: "participationReferendums", href: "/participation/referendums" },
         ],
       },
       {
-        // DETTE & TRÉSORERIE
-        titleKey: "financesDetteCategory",
+        // DEVENIR PARLEMENTAIRE
+        titleKey: "participationCandidatureCategory",
         links: [
-          { labelKey: "financesDettePublique", href: "/finances-publiques/dette-publique" },
-          { labelKey: "financesTresorerie", href: "/finances-publiques/tresorerie" },
-          { labelKey: "financesFinancementEtat", href: "/finances-publiques/financement-de-letat" },
-          { labelKey: "financesGestionDette", href: "/finances-publiques/gestion-de-la-dette" },
+          { labelKey: "participationCandidatures", href: "/participation/candidatures" },
+          { labelKey: "participationChambreCitoyenne", href: "/participation/chambre-citoyenne" },
         ],
       },
       {
-        // TRANSPARENCE FINANCIÈRE
-        titleKey: "financesTransparenceCategory",
+        // MON ESPACE
+        titleKey: "participationMyGouvCategory",
         links: [
-          { labelKey: "financesComptesPublics", href: "/finances-publiques/comptes-publics" },
-          { labelKey: "financesDonneesBudgetaires", href: "/finances-publiques/donnees-budgetaires" },
-          { labelKey: "financesControleFinancier", href: "/finances-publiques/controle-financier" },
-          { labelKey: "financesRapports", href: "/finances-publiques/rapports" },
+          { labelKey: "participationMyGouv", href: "https://sso.gouv.aor" },
         ],
       },
     ],
   },
   {
     type: "megaMenu",
-    labelKey: "commerceDouanes",
-    href: "/commerce-et-douanes",
+    labelKey: "parlementaires",
+    href: "/parlementaires",
     leader: {
-      titleKey: "commerceDouanesTitle",
-      paragraphKey: "commerceDouanesText",
-      link: { labelKey: "commerceDouanesAllLink", href: "/commerce-et-douanes" },
+      titleKey: "parlementairesTitle",
+      paragraphKey: "parlementairesText",
+      link: { labelKey: "parlementairesAllLink", href: "/parlementaires" },
     },
     categories: [
       {
-        // COMMERCE INTÉRIEUR
-        titleKey: "commerceInterieurCategory",
+        // LES MEMBRES
+        titleKey: "parlementairesMembresCategory",
         links: [
-          { labelKey: "commerceReglementationCommerciale", href: "/commerce-et-douanes/reglementation-commerciale" },
-          { labelKey: "commerceProtectionMarche", href: "/commerce-et-douanes/protection-du-marche" },
-          { labelKey: "commercePratiquesCommerciales", href: "/commerce-et-douanes/pratiques-commerciales" },
-          { labelKey: "commerceConcurrence", href: "/commerce-et-douanes/concurrence" },
+          { labelKey: "parlementairesChambreCitoyenne", href: "/parlementaires/chambre-citoyenne" },
+          { labelKey: "parlementairesDeputes", href: "/parlementaires/deputes" },
+          { labelKey: "parlementairesSenateurs", href: "/parlementaires/senateurs" },
         ],
       },
       {
-        // COMMERCE INTERNATIONAL
-        titleKey: "commerceInternationalCategory",
+        // GROUPES PARLEMENTAIRES
+        titleKey: "parlementairesGroupesCategory",
         links: [
-          { labelKey: "commerceExterieur", href: "/commerce-et-douanes/commerce-exterieur" },
-          { labelKey: "commerceAccordsCommerciaux", href: "/commerce-et-douanes/accords-commerciaux" },
-          { labelKey: "commerceMarchesInternationaux", href: "/commerce-et-douanes/marches-internationaux" },
-          { labelKey: "commercePolitiqueCommerciale", href: "/commerce-et-douanes/politique-commerciale" },
+          { labelKey: "parlementairesGroupes", href: "/parlementaires/groupes" },
         ],
       },
       {
-        // IMPORTER & EXPORTER
-        titleKey: "commerceImporterCategory",
+        // MANDATS & ACTIVITÉ
+        titleKey: "parlementairesMandatCategory",
         links: [
-          { labelKey: "commerceImportation", href: "/commerce-et-douanes/importation" },
-          { labelKey: "commerceExportation", href: "/commerce-et-douanes/exportation" },
-          { labelKey: "commerceDeclarations", href: "/commerce-et-douanes/declarations" },
-          { labelKey: "commerceProcedures", href: "/commerce-et-douanes/procedures" },
-        ],
-      },
-      {
-        // DOUANES & DROITS
-        titleKey: "commerceDouanesCategory",
-        links: [
-          { labelKey: "commerceDouanes", href: "/commerce-et-douanes/douanes" },
-          { labelKey: "commerceDroitsTaxes", href: "/commerce-et-douanes/droits-et-taxes" },
-          { labelKey: "commerceTarifs", href: "/commerce-et-douanes/tarifs" },
-          { labelKey: "commerceReglementationDouaniere", href: "/commerce-et-douanes/reglementation-douaniere" },
+          { labelKey: "parlementairesMandats", href: "/parlementaires/mandats" },
+          { labelKey: "parlementairesActivite", href: "/parlementaires/activite" },
         ],
       },
     ],
   },
   {
-    type: "megaMenu",
-    labelKey: "donneesRessources",
-    href: "/donnees-et-ressources",
-    leader: {
-      titleKey: "donneesRessourcesTitle",
-      paragraphKey: "donneesRessourcesText",
-      link: { labelKey: "donneesRessourcesAllLink", href: "/donnees-et-ressources" },
-    },
-    categories: [
-      {
-        // DONNÉES ÉCONOMIQUES
-        titleKey: "donneesDonneesCategory",
-        links: [
-          { labelKey: "donneesEconomiques", href: "/donnees-et-ressources/donnees-economiques" },
-          { labelKey: "donneesIndicateurs", href: "/donnees-et-ressources/indicateurs" },
-          { labelKey: "donneesSeriesHistoriques", href: "/donnees-et-ressources/series-historiques" },
-          { labelKey: "donneesOuvertes", href: "/donnees-et-ressources/donnees-ouvertes" },
-        ],
-      },
-      {
-        // STATISTIQUES & INDICATEURS
-        titleKey: "donneesStatistiquesCategory",
-        links: [
-          { labelKey: "donneesPib", href: "/donnees-et-ressources/pib" },
-          { labelKey: "donneesInflation", href: "/donnees-et-ressources/inflation" },
-          { labelKey: "donneesEmploi", href: "/donnees-et-ressources/emploi" },
-          { labelKey: "donneesCommerceExterieur", href: "/donnees-et-ressources/commerce-exterieur" },
-        ],
-      },
-      {
-        // ÉTUDES & PUBLICATIONS
-        titleKey: "donneesEtudesCategory",
-        links: [
-          { labelKey: "donneesRapports", href: "/donnees-et-ressources/rapports" },
-          { labelKey: "donneesEtudes", href: "/donnees-et-ressources/etudes" },
-          { labelKey: "donneesAnalyses", href: "/donnees-et-ressources/analyses" },
-          { labelKey: "donneesPublications", href: "/donnees-et-ressources/publications" },
-        ],
-      },
-      {
-        // LOIS & RÉGLEMENTATION
-        titleKey: "donneesLoisCategory",
-        links: [
-          { labelKey: "donneesTextesOfficiels", href: "/donnees-et-ressources/textes-officiels" },
-          { labelKey: "donneesReglementation", href: "/donnees-et-ressources/reglementation" },
-          { labelKey: "donneesDoctrine", href: "/donnees-et-ressources/doctrine" },
-          { labelKey: "donneesDocumentation", href: "/donnees-et-ressources/documentation" },
-        ],
-      },
-    ],
+    type: "link",
+    labelKey: "recherche",
+    href: searchPath,
   },
 ];

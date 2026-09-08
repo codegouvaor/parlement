@@ -1,0 +1,430 @@
+{
+  "brand": {
+    "republicName": "Republic of Astoria"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "skipToFooter": "Skip to footer",
+    "backToTop": {
+      "ariaLabel": "Back to top"
+    }
+  },
+  "meta": {
+    "defaultTitle": "Parliament of the Republic of Astoria",
+    "suffix": "Parliament of the Republic of Astoria",
+    "description": "Official website of the Parliament of the Republic of Astoria: understand the institution, follow the evolution of the law, observe parliamentary work and take part in democratic life.",
+    "searchPlaceholder": "Search the Parliament"
+  },
+  "header": {
+    "homeTitle": "Home — Parliament of the Republic of Astoria",
+    "serviceTitle": "Parliament of the Republic of Astoria",
+    "serviceTagline": "Understand, follow and take part in parliamentary life",
+    "myGouv": "MyGouv — my space",
+    "accountLabel": "My participation space",
+    "logoutLink": "Sign out",
+    "account": {
+      "participations": "My participations",
+      "consultations": "My consultations",
+      "petitions": "My petitions",
+      "candidatures": "My candidacies",
+      "notifications": "My notifications",
+      "profile": "My profile",
+      "settings": "My settings"
+    }
+  },
+  "nav": {
+    "primary": {
+      "leParlement": "The Parliament",
+      "legislation": "Legislation",
+      "travauxParlementaires": "Parliamentary work",
+      "participation": "Participation",
+      "parlementaires": "Members",
+      "recherche": "Search"
+    },
+    "panel": {
+      "parlementTitle": "The Parliament",
+      "parlementText": "Discover the Astorian parliamentary institution: its constitutional role, its organisation and its three chambers.",
+      "parlementAllLink": "All about the Parliament",
+      "parlementInstitutionCategory": "The institution",
+      "parlementPresentation": "About the Parliament",
+      "parlementRoleConstitutionnel": "Constitutional role",
+      "parlementCadreConstitutionnel": "Constitutional framework",
+      "parlementOrganisationCategory": "Organisation & operation",
+      "parlementOrganisation": "Organisation of the Parliament",
+      "parlementFonctionnement": "How it works",
+      "parlementStructureInstitutionnelle": "Institutional structure",
+      "parlementChambresCategory": "The three chambers",
+      "parlementChambreCitoyenne": "Citizens' Chamber",
+      "parlementChambreDeputes": "Chamber of Deputies",
+      "parlementSenat": "Senate",
+      "parlementTroisChambres": "The three chambers",
+      "parlementPresidenceCategory": "Presidency & administration",
+      "parlementPresidence": "Presidency of the Parliament",
+      "parlementAdministration": "Parliamentary administration",
+
+      "legislationTitle": "Legislation",
+      "legislationText": "Follow the life of legislative texts, from initiative to promulgation.",
+      "legislationAllLink": "All about legislation",
+      "legislationInitiativeCategory": "Initiative",
+      "legislationProjetsLoi": "Government bills",
+      "legislationPropositionsLoi": "Members' bills",
+      "legislationAmendements": "Amendments",
+      "legislationExamenCategory": "Examination",
+      "legislationTextesEnCours": "Texts under examination",
+      "legislationDebats": "Debates",
+      "legislationVotes": "Votes",
+      "legislationCycleCategory": "Lifecycle of a text",
+      "legislationTextesAdoptes": "Adopted texts",
+      "legislationVersionsSuccessives": "Successive versions",
+      "legislationHistoriqueLegislatif": "Legislative history",
+      "legislationPromulgation": "Promulgation",
+      "legislationArchivesCategory": "Archives",
+      "legislationArchives": "Archived legislation",
+
+      "travauxTitle": "Parliamentary work",
+      "travauxText": "See the Parliament in action: sittings, debates, committees and agenda.",
+      "travauxAllLink": "All parliamentary work",
+      "travauxEnCeMomentCategory": "Right now",
+      "travauxAgendaJour": "Today's agenda",
+      "travauxAgendaAVenir": "Upcoming agenda",
+      "travauxSessions": "Current sessions",
+      "travauxSeancesCategory": "Sittings & debates",
+      "travauxSeances": "Parliamentary sittings",
+      "travauxDebats": "Debates",
+      "travauxVotes": "Votes",
+      "travauxCommissionsCategory": "Committees & hearings",
+      "travauxCommissions": "Committees",
+      "travauxAuditions": "Hearings",
+      "travauxQuestionsParlementaires": "Parliamentary questions",
+      "travauxRapports": "Reports",
+      "travauxArchivesCategory": "Archives of the work",
+      "travauxArchives": "Archives of proceedings",
+
+      "participationTitle": "Participation",
+      "participationText": "Take part in democratic life: consultations, petitions and candidacies.",
+      "participationAllLink": "How to participate",
+      "participationPrendrePartCategory": "Take part",
+      "participationConsultations": "Consultations",
+      "participationPetitions": "Petitions",
+      "participationInitiativesCitoyennes": "Citizens' initiatives",
+      "participationVotesCategory": "Votes & referendums",
+      "participationVotesCitoyens": "Citizens' votes",
+      "participationReferendums": "Referendums",
+      "participationCandidatureCategory": "Become a member",
+      "participationCandidatures": "Candidacies",
+      "participationChambreCitoyenne": "Candidate to the Citizens' Chamber",
+      "participationMyGouvCategory": "My space",
+      "participationMyGouv": "MyGouv — my participation space",
+
+      "parlementairesTitle": "Members",
+      "parlementairesText": "Meet those who hold a parliamentary mandate.",
+      "parlementairesAllLink": "All members",
+      "parlementairesMembresCategory": "The members",
+      "parlementairesChambreCitoyenne": "Members of the Citizens' Chamber",
+      "parlementairesDeputes": "Deputies",
+      "parlementairesSenateurs": "Senators",
+      "parlementairesGroupesCategory": "Parliamentary groups",
+      "parlementairesGroupes": "Parliamentary groups",
+      "parlementairesMandatCategory": "Mandates & activity",
+      "parlementairesMandats": "Mandates",
+      "parlementairesActivite": "Parliamentary activity"
+    }
+  },
+  "footer": {
+    "contentDescription": "Official website of the Parliament of the Republic of Astoria.",
+    "columns": {
+      "leParlement": {
+        "title": "The Parliament"
+      },
+      "legislation": {
+        "title": "Legislation"
+      },
+      "travaux": {
+        "title": "Parliamentary work"
+      },
+      "participation": {
+        "title": "Participation"
+      }
+    },
+    "bottom": {
+      "contact": "Contact",
+      "planDuPortail": "Sitemap",
+      "documentsOpposables": "Legally binding documents",
+      "privacy": "Privacy",
+      "cookies": "Cookie management",
+      "publications": "Official publications"
+    },
+    "license": "Unless otherwise stated, the content of this site is published under an <link>open licence</link>."
+  },
+  "stayInTouch": {
+    "newsletter": {
+      "title": "Stay informed",
+      "desc": "Receive news about the Parliament and ongoing work by email.",
+      "label": "Your email address",
+      "placeholder": "you@address.gouv.aor",
+      "invalidEmail": "Please enter a valid email address.",
+      "submit": "Subscribe",
+      "success": "Your subscription has been registered.",
+      "hint": "You can unsubscribe at any time."
+    },
+    "follow": {
+      "title": "Follow the Parliament",
+      "items": {
+        "x": "X (formerly Twitter)",
+        "facebook": "Facebook",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "threads": "Threads"
+      }
+    }
+  },
+  "pages": {
+    "contact": {
+      "form": {
+        "requiredField": "This field is required.",
+        "invalidEmail": "Please enter a valid email address.",
+        "recipientLabel": "Recipient",
+        "selectRecipient": "Choose a recipient",
+        "presidency": "Presidency of the Parliament",
+        "nameLabel": "Name",
+        "namePlaceholder": "Your full name",
+        "emailFieldLabel": "Email address",
+        "emailPlaceholder": "you@address.gouv.aor",
+        "subjectLabel": "Subject",
+        "subjectPlaceholder": "The subject of your message",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Your message",
+        "sendButton": "Send",
+        "notice": "Your message is processed by the services of the Parliament."
+      }
+    }
+  },
+  "home": {
+    "metaTitle": "Parliament of the Republic of Astoria",
+    "hero": {
+      "kicker": "Parliament of the Republic of Astoria",
+      "title": "Understand, follow, participate",
+      "lead": "Understand parliamentary work, follow the evolution of laws and take part in the democratic life of the Republic."
+    },
+    "search": {
+      "title": "Search the Parliament",
+      "label": "Search for a law, a bill, an amendment, a debate or a member of parliament…",
+      "placeholder": "Search for a law, a bill, an amendment…",
+      "popularLabel": "Popular searches",
+      "popular": {
+        "lois": "Adopted laws",
+        "projets": "Government bills",
+        "seances": "Sittings",
+        "commissions": "Committees",
+        "parlementaires": "Members of parliament"
+      }
+    },
+    "activity": {
+      "kicker": "Parliamentary activity",
+      "title": "Right now at the Parliament",
+      "lead": "Follow sittings, committees and votes in progress or upcoming.",
+      "allLink": "All activity",
+      "type": {
+        "seance": "Sitting",
+        "commission": "Committee",
+        "vote": "Vote"
+      },
+      "status": {
+        "inProgress": "In progress",
+        "upcoming": "Upcoming",
+        "finished": "Finished"
+      },
+      "chambers": {
+        "chambreCitoyenne": "Citizens' Chamber",
+        "chambreDeputes": "Chamber of Deputies",
+        "senat": "Senate"
+      },
+      "items": {
+        "seance1": {
+          "subject": "Examination of the environmental transition bill"
+        },
+        "commission1": {
+          "subject": "Finance Committee — examination of the amending budget"
+        },
+        "vote1": {
+          "subject": "Citizen consultation on health reform"
+        },
+        "seance2": {
+          "subject": "Citizens' questions — morning session"
+        }
+      }
+    },
+    "legislation": {
+      "kicker": "Legislation",
+      "title": "The evolution of law",
+      "lead": "Follow the journey of legislative texts, from initiative to promulgation.",
+      "allLink": "All legislation",
+      "lifecycleTitle": "The lifecycle of a legislative text",
+      "stages": {
+        "initiative": "Initiative",
+        "examen": "Examination",
+        "commission": "Committee",
+        "debats": "Debates",
+        "votes": "Votes",
+        "adoption": "Adoption",
+        "promulgation": "Promulgation"
+      },
+      "chambers": {
+        "chambreCitoyenne": "Citizens' Chamber",
+        "chambreDeputes": "Chamber of Deputies",
+        "senat": "Senate"
+      },
+      "items": {
+        "plEnvironnement": {
+          "title": "Bill on environmental transition",
+          "activity": "Under debate in the Chamber of Deputies"
+        },
+        "ppEducation": {
+          "title": "Bill for education reform",
+          "activity": "Under committee examination in the Senate"
+        },
+        "plTransparence": {
+          "title": "Bill on parliamentary transparency",
+          "activity": "Adopted by the Citizens' Chamber"
+        },
+        "plNumerique": {
+          "title": "Law for digital sovereignty",
+          "activity": "Promulgated on 18 December 2024"
+        }
+      }
+    },
+    "chambers": {
+      "kicker": "The three chambers",
+      "title": "One Parliament, three chambers",
+      "lead": "The Republic of Astoria has a Parliament composed of three chambers of equal institutional importance.",
+      "allLink": "Discover the chambers",
+      "items": {
+        "chambreCitoyenne": {
+          "title": "Citizens' Chamber",
+          "desc": "Direct representation of the citizens of Astoria.",
+          "activity": "3 texts under examination"
+        },
+        "chambreDeputes": {
+          "title": "Chamber of Deputies",
+          "desc": "Territorial and political representation of the Republic.",
+          "activity": "2 texts under debate"
+        },
+        "senat": {
+          "title": "Senate",
+          "desc": "Representation of local authorities and guardian of the constitutional framework.",
+          "activity": "1 text in committee"
+        }
+      }
+    },
+    "participation": {
+      "kicker": "Participation",
+      "title": "Take part in democratic life",
+      "lead": "Take part in parliamentary processes, vote, petition or become a candidate.",
+      "allLink": "How to participate",
+      "myGouvLabel": "My MyGouv space",
+      "myGouvDesc": "Sign in to access your participations, candidacies and personal notifications.",
+      "items": {
+        "voter": {
+          "title": "Vote",
+          "desc": "Access eligible citizen voting processes."
+        },
+        "petitions": {
+          "title": "Petitions",
+          "desc": "Submit or follow parliamentary petitions."
+        },
+        "consultations": {
+          "title": "Consultations",
+          "desc": "Take part in open public consultations."
+        },
+        "initiatives": {
+          "title": "Citizens' initiatives",
+          "desc": "Propose or follow citizens' initiatives."
+        },
+        "candidatures": {
+          "title": "Become a candidate",
+          "desc": "Submit a candidacy for an elected mandate."
+        }
+      }
+    },
+    "agenda": {
+      "kicker": "Calendar",
+      "title": "Upcoming",
+      "lead": "Next sittings, committee meetings, debates and votes.",
+      "allLink": "Full calendar",
+      "when": {
+        "today": "Today",
+        "tomorrow": "Tomorrow",
+        "week": "This week"
+      },
+      "items": {
+        "seancePublique": {
+          "title": "Public sitting — Chamber of Deputies"
+        },
+        "commissionBudget": {
+          "title": "Finance Committee — Senate"
+        },
+        "questionsCitoyennes": {
+          "title": "Citizens' questions — Citizens' Chamber"
+        },
+        "auditionExperts": {
+          "title": "Expert hearing on digital sovereignty"
+        }
+      }
+    },
+    "understand": {
+      "kicker": "Learn",
+      "title": "Understand the Parliament",
+      "lead": "Resources to understand how the parliamentary institution works.",
+      "allLink": "All about the Parliament",
+      "items": {
+        "fonctionnement": "How does the Parliament work?",
+        "troisChambres": "The three chambers",
+        "processusLegislatif": "The legislative process",
+        "suivreLoi": "How to follow a law?",
+        "participer": "How to participate?",
+        "constitution": "The Constitution"
+      }
+    },
+    "news": {
+      "kicker": "News",
+      "title": "Parliament news",
+      "lead": "Latest news from the parliamentary institution.",
+      "allLink": "All news",
+      "items": {
+        "ouvertureSession": {
+          "title": "Opening of the 2025 parliamentary session",
+          "desc": "The Parliament officially opens the 2025 parliamentary session.",
+          "tag": "Session",
+          "date": "3 February 2025"
+        },
+        "rapportCommission": {
+          "title": "Publication of the report on environmental transition",
+          "tag": "Report",
+          "date": "30 January 2025"
+        },
+        "adoptionLoiNumerique": {
+          "title": "Adoption of the law for digital sovereignty",
+          "tag": "Adoption",
+          "date": "18 December 2024"
+        },
+        "consultationPublique": {
+          "title": "Opening of the consultation on education reform",
+          "tag": "Consultation",
+          "date": "15 January 2025"
+        }
+      }
+    },
+    "openData": {
+      "kicker": "Open data",
+      "title": "Parliamentary data",
+      "lead": "Parliamentary information is accessible as open data.",
+      "allLink": "All data",
+      "items": {
+        "donneesOuvertes": "Open data of the Parliament",
+        "apiParlementaire": "Parliamentary API",
+        "statistiques": "Parliamentary statistics",
+        "archives": "Legislative archives"
+      }
+    }
+  }
+}

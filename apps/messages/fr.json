@@ -1,0 +1,430 @@
+{
+  "brand": {
+    "republicName": "République d'Astoria"
+  },
+  "common": {
+    "skipToContent": "Aller au contenu",
+    "skipToFooter": "Aller au pied de page",
+    "backToTop": {
+      "ariaLabel": "Retour en haut de page"
+    }
+  },
+  "meta": {
+    "defaultTitle": "Parlement de la République d'Astoria",
+    "suffix": "Parlement de la République d'Astoria",
+    "description": "Site officiel du Parlement de la République d'Astoria : comprendre l'institution, suivre l'évolution de la loi, observer les travaux parlementaires et participer à la vie démocratique.",
+    "searchPlaceholder": "Rechercher dans le Parlement"
+  },
+  "header": {
+    "homeTitle": "Accueil — Parlement de la République d'Astoria",
+    "serviceTitle": "Parlement de la République d'Astoria",
+    "serviceTagline": "Comprendre, suivre et participer à la vie parlementaire",
+    "myGouv": "MyGouv — mon espace",
+    "accountLabel": "Mon espace de participation",
+    "logoutLink": "Se déconnecter",
+    "account": {
+      "participations": "Mes participations",
+      "consultations": "Mes consultations",
+      "petitions": "Mes pétitions",
+      "candidatures": "Mes candidatures",
+      "notifications": "Mes notifications",
+      "profile": "Mon profil",
+      "settings": "Mes paramètres"
+    }
+  },
+  "nav": {
+    "primary": {
+      "leParlement": "Le Parlement",
+      "legislation": "Législation",
+      "travauxParlementaires": "Travaux parlementaires",
+      "participation": "Participation",
+      "parlementaires": "Parlementaires",
+      "recherche": "Recherche"
+    },
+    "panel": {
+      "parlementTitle": "Le Parlement",
+      "parlementText": "Découvrir l'institution parlementaire d'Astoria : son rôle constitutionnel, son organisation et ses trois chambres.",
+      "parlementAllLink": "Tout savoir sur le Parlement",
+      "parlementInstitutionCategory": "L'institution",
+      "parlementPresentation": "Présentation du Parlement",
+      "parlementRoleConstitutionnel": "Rôle constitutionnel",
+      "parlementCadreConstitutionnel": "Cadre constitutionnel",
+      "parlementOrganisationCategory": "Organisation & fonctionnement",
+      "parlementOrganisation": "Organisation du Parlement",
+      "parlementFonctionnement": "Fonctionnement",
+      "parlementStructureInstitutionnelle": "Structure institutionnelle",
+      "parlementChambresCategory": "Les trois chambres",
+      "parlementChambreCitoyenne": "Chambre citoyenne",
+      "parlementChambreDeputes": "Chambre des députés",
+      "parlementSenat": "Sénat",
+      "parlementTroisChambres": "Les trois chambres",
+      "parlementPresidenceCategory": "Présidence & administration",
+      "parlementPresidence": "Présidence du Parlement",
+      "parlementAdministration": "Administration parlementaire",
+
+      "legislationTitle": "Législation",
+      "legislationText": "Suivre la vie des textes législatifs, de l'initiative à la promulgation.",
+      "legislationAllLink": "Tout sur la législation",
+      "legislationInitiativeCategory": "L'initiative",
+      "legislationProjetsLoi": "Projets de loi",
+      "legislationPropositionsLoi": "Propositions de loi",
+      "legislationAmendements": "Amendements",
+      "legislationExamenCategory": "L'examen",
+      "legislationTextesEnCours": "Textes en cours d'examen",
+      "legislationDebats": "Débats",
+      "legislationVotes": "Votes",
+      "legislationCycleCategory": "Le cycle de vie d'un texte",
+      "legislationTextesAdoptes": "Textes adoptés",
+      "legislationVersionsSuccessives": "Versions successives",
+      "legislationHistoriqueLegislatif": "Historique législatif",
+      "legislationPromulgation": "Promulgation",
+      "legislationArchivesCategory": "Les archives",
+      "legislationArchives": "Législation archivée",
+
+      "travauxTitle": "Travaux parlementaires",
+      "travauxText": "Voir le Parlement à l'œuvre : séances, débats, commissions et agenda.",
+      "travauxAllLink": "Tous les travaux parlementaires",
+      "travauxEnCeMomentCategory": "En ce moment",
+      "travauxAgendaJour": "Agenda du jour",
+      "travauxAgendaAVenir": "Agenda à venir",
+      "travauxSessions": "Sessions en cours",
+      "travauxSeancesCategory": "Séances & débats",
+      "travauxSeances": "Séances parlementaires",
+      "travauxDebats": "Débats",
+      "travauxVotes": "Votes",
+      "travauxCommissionsCategory": "Commissions & auditions",
+      "travauxCommissions": "Commissions",
+      "travauxAuditions": "Auditions",
+      "travauxQuestionsParlementaires": "Questions parlementaires",
+      "travauxRapports": "Rapports",
+      "travauxArchivesCategory": "Les archives des travaux",
+      "travauxArchives": "Archives des travaux",
+
+      "participationTitle": "Participation",
+      "participationText": "Prendre part à la vie démocratique : consultations, pétitions et candidatures.",
+      "participationAllLink": "Comment participer",
+      "participationPrendrePartCategory": "Prendre part",
+      "participationConsultations": "Consultations",
+      "participationPetitions": "Pétitions",
+      "participationInitiativesCitoyennes": "Initiatives citoyennes",
+      "participationVotesCategory": "Votes & référendums",
+      "participationVotesCitoyens": "Votes citoyens",
+      "participationReferendums": "Référendums",
+      "participationCandidatureCategory": "Devenir parlementaire",
+      "participationCandidatures": "Candidatures",
+      "participationChambreCitoyenne": "Candidat à la Chambre citoyenne",
+      "participationMyGouvCategory": "Mon espace",
+      "participationMyGouv": "MyGouv — mon espace de participation",
+
+      "parlementairesTitle": "Parlementaires",
+      "parlementairesText": "Connaître celles et ceux qui exercent le mandat parlementaire.",
+      "parlementairesAllLink": "Tous les parlementaires",
+      "parlementairesMembresCategory": "Les membres",
+      "parlementairesChambreCitoyenne": "Membres de la Chambre citoyenne",
+      "parlementairesDeputes": "Députés",
+      "parlementairesSenateurs": "Sénateurs",
+      "parlementairesGroupesCategory": "Groupes parlementaires",
+      "parlementairesGroupes": "Groupes parlementaires",
+      "parlementairesMandatCategory": "Mandats & activité",
+      "parlementairesMandats": "Mandats",
+      "parlementairesActivite": "Activité parlementaire"
+    }
+  },
+  "footer": {
+    "contentDescription": "Site officiel du Parlement de la République d'Astoria.",
+    "columns": {
+      "leParlement": {
+        "title": "Le Parlement"
+      },
+      "legislation": {
+        "title": "Législation"
+      },
+      "travaux": {
+        "title": "Travaux parlementaires"
+      },
+      "participation": {
+        "title": "Participation"
+      }
+    },
+    "bottom": {
+      "contact": "Contact",
+      "planDuPortail": "Plan du portail",
+      "documentsOpposables": "Documents opposables",
+      "privacy": "Confidentialité",
+      "cookies": "Gestion des cookies",
+      "publications": "Publications officielles"
+    },
+    "license": "Sauf mention contraire, les contenus de ce site sont publiés sous <link>licence ouverte</link>."
+  },
+  "stayInTouch": {
+    "newsletter": {
+      "title": "Restez informé",
+      "desc": "Recevez les actualités du Parlement et les travaux en cours par courriel.",
+      "label": "Votre adresse électronique",
+      "placeholder": "votre@adresse.gouv.aor",
+      "invalidEmail": "Veuillez saisir une adresse électronique valide.",
+      "submit": "S'abonner",
+      "success": "Votre abonnement a bien été enregistré.",
+      "hint": "Vous pourrez vous désabonner à tout moment."
+    },
+    "follow": {
+      "title": "Suivre le Parlement",
+      "items": {
+        "x": "X (anciennement Twitter)",
+        "facebook": "Facebook",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "threads": "Threads"
+      }
+    }
+  },
+  "pages": {
+    "contact": {
+      "form": {
+        "requiredField": "Ce champ est obligatoire.",
+        "invalidEmail": "Veuillez saisir une adresse électronique valide.",
+        "recipientLabel": "Destinataire",
+        "selectRecipient": "Choisir un destinataire",
+        "presidency": "Présidence du Parlement",
+        "nameLabel": "Nom",
+        "namePlaceholder": "Votre nom complet",
+        "emailFieldLabel": "Adresse électronique",
+        "emailPlaceholder": "votre@adresse.gouv.aor",
+        "subjectLabel": "Objet",
+        "subjectPlaceholder": "L'objet de votre message",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Votre message",
+        "sendButton": "Envoyer",
+        "notice": "Votre message est traité par les services du Parlement."
+      }
+    }
+  },
+  "home": {
+    "metaTitle": "Parlement de la République d'Astoria",
+    "hero": {
+      "kicker": "Parlement de la République d'Astoria",
+      "title": "Comprendre, suivre, participer",
+      "lead": "Comprendre les travaux du Parlement, suivre l'évolution des lois et participer à la vie démocratique de la République."
+    },
+    "search": {
+      "title": "Rechercher dans le Parlement",
+      "label": "Rechercher une loi, un projet, un amendement, un débat ou un parlementaire…",
+      "placeholder": "Rechercher une loi, un projet, un amendement…",
+      "popularLabel": "Recherches populaires",
+      "popular": {
+        "lois": "Lois adoptées",
+        "projets": "Projets de loi",
+        "seances": "Séances",
+        "commissions": "Commissions",
+        "parlementaires": "Parlementaires"
+      }
+    },
+    "activity": {
+      "kicker": "Activité parlementaire",
+      "title": "En ce moment au Parlement",
+      "lead": "Suivre en direct les séances, commissions et votes en cours ou à venir.",
+      "allLink": "Toute l'activité",
+      "type": {
+        "seance": "Séance",
+        "commission": "Commission",
+        "vote": "Vote"
+      },
+      "status": {
+        "inProgress": "En cours",
+        "upcoming": "À venir",
+        "finished": "Terminé"
+      },
+      "chambers": {
+        "chambreCitoyenne": "Chambre citoyenne",
+        "chambreDeputes": "Chambre des députés",
+        "senat": "Sénat"
+      },
+      "items": {
+        "seance1": {
+          "subject": "Examen du projet de loi sur la transition environnementale"
+        },
+        "commission1": {
+          "subject": "Commission des finances — examen du budget rectificatif"
+        },
+        "vote1": {
+          "subject": "Consultation citoyenne sur la réforme de la santé"
+        },
+        "seance2": {
+          "subject": "Questions citoyennes — session du matin"
+        }
+      }
+    },
+    "legislation": {
+      "kicker": "Législation",
+      "title": "L'évolution du droit",
+      "lead": "Suivre le parcours des textes législatifs, de l'initiative à la promulgation.",
+      "allLink": "Toute la législation",
+      "lifecycleTitle": "Le cycle de vie d'un texte législatif",
+      "stages": {
+        "initiative": "Initiative",
+        "examen": "Examen",
+        "commission": "Commission",
+        "debats": "Débats",
+        "votes": "Votes",
+        "adoption": "Adoption",
+        "promulgation": "Promulgation"
+      },
+      "chambers": {
+        "chambreCitoyenne": "Chambre citoyenne",
+        "chambreDeputes": "Chambre des députés",
+        "senat": "Sénat"
+      },
+      "items": {
+        "plEnvironnement": {
+          "title": "Projet de loi relatif à la transition environnementale",
+          "activity": "En débat devant la Chambre des députés"
+        },
+        "ppEducation": {
+          "title": "Proposition de loi pour la réforme de l'éducation",
+          "activity": "Examen en commission au Sénat"
+        },
+        "plTransparence": {
+          "title": "Projet de loi sur la transparence parlementaire",
+          "activity": "Adopté par la Chambre citoyenne"
+        },
+        "plNumerique": {
+          "title": "Loi pour la souveraineté numérique",
+          "activity": "Promulguée le 18 décembre 2024"
+        }
+      }
+    },
+    "chambers": {
+      "kicker": "Les trois chambres",
+      "title": "Un Parlement, trois chambres",
+      "lead": "La République d'Astoria possède un Parlement composé de trois chambres d'égale importance institutionnelle.",
+      "allLink": "Découvrir les chambres",
+      "items": {
+        "chambreCitoyenne": {
+          "title": "Chambre citoyenne",
+          "desc": "Représentation directe des citoyens et des citoyennes d'Astoria.",
+          "activity": "3 textes en cours d'examen"
+        },
+        "chambreDeputes": {
+          "title": "Chambre des députés",
+          "desc": "Représentation territoriale et politique de la République.",
+          "activity": "2 textes en débat"
+        },
+        "senat": {
+          "title": "Sénat",
+          "desc": "Représentation des collectivités et garde du cadre constitutionnel.",
+          "activity": "1 texte en commission"
+        }
+      }
+    },
+    "participation": {
+      "kicker": "Participation",
+      "title": "Participer à la vie démocratique",
+      "lead": "Prendre part aux processus parlementaires, voter, pétitionner ou devenir candidat.",
+      "allLink": "Comment participer",
+      "myGouvLabel": "Mon espace MyGouv",
+      "myGouvDesc": "Connectez-vous pour accéder à vos participations, candidatures et notifications personnelles.",
+      "items": {
+        "voter": {
+          "title": "Voter",
+          "desc": "Accéder aux processus de vote citoyen éligibles."
+        },
+        "petitions": {
+          "title": "Pétitions",
+          "desc": "Déposer ou suivre des pétitions parlementaires."
+        },
+        "consultations": {
+          "title": "Consultations",
+          "desc": "Participer aux consultations publiques ouvertes."
+        },
+        "initiatives": {
+          "title": "Initiatives citoyennes",
+          "desc": "Proposer ou suivre des initiatives citoyennes."
+        },
+        "candidatures": {
+          "title": "Devenir candidat",
+          "desc": "Soumettre une candidature pour un mandat électif."
+        }
+      }
+    },
+    "agenda": {
+      "kicker": "Calendrier",
+      "title": "À l'agenda",
+      "lead": "Prochaines séances, commissions, débats et votes prévus.",
+      "allLink": "Calendrier complet",
+      "when": {
+        "today": "Aujourd'hui",
+        "tomorrow": "Demain",
+        "week": "Cette semaine"
+      },
+      "items": {
+        "seancePublique": {
+          "title": "Séance publique — Chambre des députés"
+        },
+        "commissionBudget": {
+          "title": "Commission des finances — Sénat"
+        },
+        "questionsCitoyennes": {
+          "title": "Questions citoyennes — Chambre citoyenne"
+        },
+        "auditionExperts": {
+          "title": "Audition d'experts sur la souveraineté numérique"
+        }
+      }
+    },
+    "understand": {
+      "kicker": "Comprendre",
+      "title": "Comprendre le Parlement",
+      "lead": "Des ressources pour comprendre le fonctionnement de l'institution parlementaire.",
+      "allLink": "Tout savoir sur le Parlement",
+      "items": {
+        "fonctionnement": "Comment fonctionne le Parlement ?",
+        "troisChambres": "Les trois chambres",
+        "processusLegislatif": "Le processus législatif",
+        "suivreLoi": "Comment suivre une loi ?",
+        "participer": "Comment participer ?",
+        "constitution": "La Constitution"
+      }
+    },
+    "news": {
+      "kicker": "Actualités",
+      "title": "Actualités du Parlement",
+      "lead": "Les dernières nouvelles de l'institution parlementaire.",
+      "allLink": "Toutes les actualités",
+      "items": {
+        "ouvertureSession": {
+          "title": "Ouverture de la session parlementaire 2025",
+          "desc": "Le Parlement ouvre officiellement la session parlementaire 2025.",
+          "tag": "Session",
+          "date": "03 février 2025"
+        },
+        "rapportCommission": {
+          "title": "Publication du rapport sur la transition environnementale",
+          "tag": "Rapport",
+          "date": "30 janvier 2025"
+        },
+        "adoptionLoiNumerique": {
+          "title": "Adoption de la loi pour la souveraineté numérique",
+          "tag": "Adoption",
+          "date": "18 décembre 2024"
+        },
+        "consultationPublique": {
+          "title": "Ouverture de la consultation sur la réforme de l'éducation",
+          "tag": "Consultation",
+          "date": "15 janvier 2025"
+        }
+      }
+    },
+    "openData": {
+      "kicker": "Données publiques",
+      "title": "Les données du Parlement",
+      "lead": "L'information parlementaire est accessible en données ouvertes.",
+      "allLink": "Toutes les données",
+      "items": {
+        "donneesOuvertes": "Données ouvertes du Parlement",
+        "apiParlementaire": "API parlementaire",
+        "statistiques": "Statistiques parlementaires",
+        "archives": "Archives législatives"
+      }
+    }
+  }
+}

@@ -5,9 +5,9 @@ import (
 	"errors"
 	"time"
 
-	"github.com/codegouvaor/economie/server/src/interfaces"
-	"github.com/codegouvaor/economie/server/src/models"
-	"github.com/codegouvaor/economie/server/src/utils"
+	"github.com/codegouvaor/parlement/server/src/interfaces"
+	"github.com/codegouvaor/parlement/server/src/models"
+	"github.com/codegouvaor/parlement/server/src/utils"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 )

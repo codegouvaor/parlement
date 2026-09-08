@@ -28,7 +28,6 @@ const isNavItemActive = (href: string, pathname: string): boolean =>
 function collectChildHrefs(item: (typeof primaryNavigation)[number]): string[] {
   if (item.type === "link") return [];
   const hrefs: string[] = [item.leader.link.href];
-  if (item.featuredLink) hrefs.push(item.featuredLink.href);
   for (const cat of item.categories ?? []) {
     if (cat.mainLink) hrefs.push(cat.mainLink.href);
     for (const link of cat.links) hrefs.push(link.href);
@@ -37,29 +36,32 @@ function collectChildHrefs(item: (typeof primaryNavigation)[number]): string[] {
 }
 
 /**
- * Government Header of the Ministry of Economy and Finance (Astoria).
+ * Government Header of the Parliament of the Republic of Astoria.
  *
- * Main navigation — the permanent architecture of the ministry application,
- * six domains, each regrouping its missions and services into a single
- * coherent entry point (no separate portals for taxes, customs, budget…):
+ * Main navigation — the permanent information architecture of the Parliament
+ * application, organised around six question-oriented subjects rather than
+ * generic website categories:
  *
- *   Économie             -> Politique économique, croissance, emploi, innovation
- *   Fiscalité            -> Impôts, taxes, déclarations et paiements
- *   Entreprises          -> Créer, gérer, financer, exporter
- *   Finances publiques   -> Budget de l'État, dette, transparence
- *   Commerce & Douanes   -> Commerce intérieur et international, douanes
- *   Données & Ressources -> Données, statistiques, études, réglementation
+ *   Le Parlement             -> Comprendre : qu'est-ce que le Parlement ?
+ *   Législation              -> Suivre : qu'est-ce qui devient du droit ?
+ *   Travaux parlementaires   -> Suivre : que fait le Parlement actuellement ?
+ *   Participation            -> Agir : comment puis-je participer ?
+ *   Parlementaires           -> Accéder : qui exerce le mandat parlementaire ?
+ *   Recherche                -> Accéder : que puis-je retrouver ?
  *
- * The six domains are flanked by two transversal actions: the global search
- * (ministry-wide search over pages, services, démarches, data…) and
- * "Mon espace", the personal space designed to work with MyGouv.
+ * The first four are the thematic pillars of the institution (comprendre,
+ * suivre, agir); the last two are transversal access points. MyGouv is not a
+ * seventh subject: it is the citizen's authenticated identity and personal
+ * participation space, and stays visually separated on the right of the
+ * header as a distinct action.
  *
- * When the user is authenticated, the "Mon espace" link in the quick-access
+ * When the user is authenticated, the "MyGouv" link in the quick-access
  * toolbar is hidden and a custom account menu (`UserAccountMenu`) is
- * rendered instead, presenting the personal-space entries (mes démarches,
- * mes obligations, mes paiements…). The menu content is driven by
- * `siteAccountConfig` so each site can present a different account
- * interface without touching this component.
+ * rendered instead, presenting the personal-participation entries. The menu
+ * content is driven by `siteAccountConfig` so each site can present a
+ * different account interface without touching this component. MyGouv
+ * remains the identity and authentication layer — the Parliament application
+ * never duplicates it.
  */
 export function GovernmentHeader() {
   const t = useTranslations();
@@ -85,22 +87,6 @@ export function GovernmentHeader() {
     }
 
     const categories: MegaMenuProps.Category[] = [
-      ...(item.featuredLink
-        ? [
-            {
-              // Column heading — intentionally not a link: it labels the
-              // featured item below it rather than being a destination.
-              categoryMainText: tNavPanel(item.featuredLink.titleKey),
-              links: [
-                {
-                  text: t("home.news.featured.title"),
-                  linkProps: { href: item.featuredLink.href },
-                  isActive: isNavItemActive(item.featuredLink.href, pathname),
-                },
-              ],
-            } satisfies MegaMenuProps.Category,
-          ]
-        : []),
       ...(item.categories ?? []).map((category): MegaMenuProps.Category => {
         // Column headings are rendered as plain text (`categoryMainText`),
         // never as links: they introduce the links beneath them and are not
@@ -141,17 +127,18 @@ export function GovernmentHeader() {
   // Auth state for conditional account UI
   const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
 
-  // Quick-access items — “Mon espace” is a transversal action: it points to
-  // the SSO personal space when the user is not authenticated, and is
-  // replaced by the account menu (with its personal-space entries) once the
-  // user is authenticated.
+  // Quick-access items — “MyGouv” is a transversal action: it points to the
+  // SSO identity layer when the user is not authenticated (the Parliament
+  // application never duplicates MyGouv's identity functionality), and is
+  // replaced by the account menu (with its personal-participation entries)
+  // once the user is authenticated.
   const quickAccessItems = React.useMemo(() => {
     const items: HeaderProps.QuickAccessItem[] = [];
 
     if (!isAuthenticated || isAuthLoading) {
       items.push({
         iconId: "fr-icon-account-circle-line",
-        text: t("header.mySpace"),
+        text: t("header.myGouv"),
         linkProps: { href: getDomainUrl("sso", "/login") },
       });
     }

@@ -44,13 +44,14 @@ export type SiteAccountConfig = {
 };
 
 /**
- * Default site configuration for the Ministry of Economy and Finance.
+ * Default site configuration for the Parliament of the Republic of Astoria.
  * Override this in site-specific configurations.
  *
- * The account menu follows the MyGouv personal-space model: the user
- * reaches their files, obligations, payments and documents through a single
- * entry point, without having to know which internal administration handles
- * each case.
+ * The account menu follows the MyGouv personal-participation model: the
+ * citizen reaches their participations, consultations, petitions, candidacies
+ * and notifications through a single entry point. MyGouv remains the identity
+ * and authentication layer — the Parliament application integrates with it
+ * rather than duplicating it.
  */
 export const siteAccountConfig: SiteAccountConfig = {
   enabled: true,
@@ -58,34 +59,29 @@ export const siteAccountConfig: SiteAccountConfig = {
   logoutLabelKey: "header.logoutLink",
   items: [
     {
-      labelKey: "header.account.demarches",
-      href: "/mon-espace/demarches",
-      iconId: "fr-icon-file-text-line",
+      labelKey: "header.account.participations",
+      href: "/mon-espace/participations",
+      iconId: "fr-icon-checkbox-circle-line",
     },
     {
-      labelKey: "header.account.obligations",
-      href: "/mon-espace/obligations",
-      iconId: "fr-icon-calendar-line",
+      labelKey: "header.account.consultations",
+      href: "/mon-espace/consultations",
+      iconId: "fr-icon-chat-3-line",
     },
     {
-      labelKey: "header.account.paiements",
-      href: "/mon-espace/paiements",
-      iconId: "fr-icon-bank-line",
+      labelKey: "header.account.petitions",
+      href: "/mon-espace/petitions",
+      iconId: "fr-icon-edit-line",
     },
     {
-      labelKey: "header.account.documents",
-      href: "/mon-espace/documents",
-      iconId: "fr-icon-folder-2-line",
+      labelKey: "header.account.candidatures",
+      href: "/mon-espace/candidatures",
+      iconId: "fr-icon-user-add-line",
     },
     {
       labelKey: "header.account.notifications",
       href: "/mon-espace/notifications",
       iconId: "fr-icon-notification-3-line",
-    },
-    {
-      labelKey: "header.account.entreprises",
-      href: "/mon-espace/entreprises",
-      iconId: "fr-icon-building-line",
     },
     {
       labelKey: "header.account.profile",

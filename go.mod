@@ -1,4 +1,4 @@
-module github.com/codegouvaor/economie
+module github.com/codegouvaor/parlement
 
 go 1.25.5
 

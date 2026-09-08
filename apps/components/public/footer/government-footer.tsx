@@ -4,7 +4,6 @@ import { Footer } from "@codegouvaor/react-ads/Footer";
 import type { FooterProps } from "@codegouvaor/react-ads/Footer";
 import { useTranslations } from "next-intl";
 import { footerNavigation, legalPaths, pageAnchors } from "@/lib/site-structure";
-import { LocaleSwitcher } from "../locale-switcher";
 import { StayInTouch } from "./stay-in-touch";
 
 const HOME_PATH = "/";
